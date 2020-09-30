@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
     def index
-        @name = "Jo"
+        @communities = Community.all.limit(5)
     end
 
 end
