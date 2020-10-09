@@ -2,4 +2,9 @@
 
 <%= @community.name %>
 
+<% @posts.each do | post | %>
+    <h5><%= link_to post.title, community_post_path(@community, post) %></h5>
+    <p><%= truncate post.body, length: 200 %></p>
+<% end %>
+
 <%= simple_format @community.rules %>
