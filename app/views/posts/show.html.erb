@@ -3,5 +3,7 @@
 <%= simple_format @post.body %>
 
 <%= form_for @comment do |f| %>
-
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.text_field :message, placeholder: "Your comment goes here", class: "form-control" %>
+    <%= f.submit "Submit Comment", class: "btn btn-success btn-lg" %>
 <% end %>
