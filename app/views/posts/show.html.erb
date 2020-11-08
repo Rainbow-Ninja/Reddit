@@ -1,5 +1,5 @@
 <%= @post.title %>
-<%= @comment.class %>
+
 <%= simple_format @post.body %>
 
 <div id="post-comments">
@@ -7,7 +7,7 @@
 </div>
 
 <h5>Leave a comment</h5>
-<%= form_for Comment.new do |f| %>
+<%= form_for Comment.new, remote: true do |f| %>
     <%= f.hidden_field :post_id, value: @post.id %>
     <%= f.text_area :message, placeholder: "Your comment goes here", class: "form-control" %>
     <%= f.submit "Submit Comment", class: "btn btn-success mt-3 mb-3" %>
